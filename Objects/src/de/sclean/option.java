@@ -32,7 +32,7 @@ public class option extends Activity implements B4AActivity{
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		if (isFirst) {
-			processBA = new anywheresoftware.b4a.ShellBA(this.getApplicationContext(), null, null, "de.sclean", "de.sclean.option");
+			processBA = new BA(this.getApplicationContext(), null, null, "de.sclean", "de.sclean.option");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -320,7 +320,26 @@ public class option extends Activity implements B4AActivity{
             
     }
 
-
+public anywheresoftware.b4a.keywords.Common __c = null;
+public static anywheresoftware.b4a.keywords.constants.TypefaceWrapper _rfont = null;
+public static String _package = "";
+public static String _utext = "";
+public de.amberhome.objects.appcompat.ACCheckBoxWrapper _acb1 = null;
+public anywheresoftware.b4a.objects.LabelWrapper _ctext = null;
+public anywheresoftware.b4a.objects.LabelWrapper _mtext = null;
+public anywheresoftware.b4a.objects.PanelWrapper _panel1 = null;
+public anywheresoftware.b4a.objects.ListViewWrapper _lv2 = null;
+public com.tchart.materialcolors.MaterialColors _mcl = null;
+public de.sclean.keyvaluestore _savedata = null;
+public anywheresoftware.b4a.phone.PackageManagerWrapper _pack = null;
+public de.amberhome.objects.appcompat.ACFlatButtonWrapper _ab1 = null;
+public de.sclean.main _main = null;
+public de.sclean.supp _supp = null;
+public de.sclean.starter _starter = null;
+public de.sclean.info _info = null;
+public de.sclean.widget _widget = null;
+public de.sclean.statemanager _statemanager = null;
+public de.sclean.animator _animator = null;
 
 public static void initializeProcessGlobals() {
              try {
@@ -329,198 +348,316 @@ public static void initializeProcessGlobals() {
                 throw new RuntimeException(e);
             }
 }
-public anywheresoftware.b4a.keywords.Common __c = null;
-public static anywheresoftware.b4a.keywords.constants.TypefaceWrapper _rfont = null;
-public de.amberhome.objects.appcompat.ACCheckBoxWrapper _acb1 = null;
-public anywheresoftware.b4a.objects.LabelWrapper _ctext = null;
-public anywheresoftware.b4a.objects.LabelWrapper _mtext = null;
-public anywheresoftware.b4a.objects.PanelWrapper _panel1 = null;
-public de.amberhome.objects.appcompat.ACButtonWrapper _ab1 = null;
-public anywheresoftware.b4a.objects.ListViewWrapper _lv2 = null;
-public com.tchart.materialcolors.MaterialColors _mcl = null;
-public de.sclean.main _main = null;
-public de.sclean.supp _supp = null;
-public de.sclean.starter _starter = null;
-public de.sclean.info _info = null;
-public de.sclean.widget _widget = null;
-public de.sclean.statemanager _statemanager = null;
-public de.sclean.animator _animator = null;
 public static String  _ab1_click() throws Exception{
-RDebugUtils.currentModule="option";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "ab1_click"))
-	return (String) Debug.delegate(mostCurrent.activityBA, "ab1_click", null);
-RDebugUtils.currentLine=4259840;
- //BA.debugLineNum = 4259840;BA.debugLine="Sub ab1_Click";
-RDebugUtils.currentLine=4259841;
- //BA.debugLineNum = 4259841;BA.debugLine="StateManager.SaveState(Activity,\"option\")";
+ //BA.debugLineNum = 145;BA.debugLine="Sub ab1_Click";
+ //BA.debugLineNum = 146;BA.debugLine="StateManager.SaveState(Activity,\"option\")";
 mostCurrent._statemanager._savestate(mostCurrent.activityBA,mostCurrent._activity,"option");
-RDebugUtils.currentLine=4259842;
- //BA.debugLineNum = 4259842;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 147;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
-RDebugUtils.currentLine=4259843;
- //BA.debugLineNum = 4259843;BA.debugLine="Animator.setanimati(\"extra_in\", \"extra_out\")";
+ //BA.debugLineNum = 148;BA.debugLine="Animator.setanimati(\"extra_in\", \"extra_out\")";
 mostCurrent._animator._setanimati(mostCurrent.activityBA,"extra_in","extra_out");
-RDebugUtils.currentLine=4259844;
- //BA.debugLineNum = 4259844;BA.debugLine="End Sub";
+ //BA.debugLineNum = 149;BA.debugLine="End Sub";
+return "";
+}
+public static String  _about_click() throws Exception{
+anywheresoftware.b4a.objects.LabelWrapper _l1 = null;
+anywheresoftware.b4a.objects.LabelWrapper _l2 = null;
+anywheresoftware.b4a.objects.CSBuilder _cs = null;
+de.amberhome.materialdialogs.MaterialDialogWrapper _infodia = null;
+anywheresoftware.b4a.objects.drawable.BitmapDrawable _inf = null;
+de.amberhome.materialdialogs.MaterialDialogBuilderWrapper _builder = null;
+ //BA.debugLineNum = 116;BA.debugLine="Sub about_click";
+ //BA.debugLineNum = 117;BA.debugLine="Dim l1,l2 As Label";
+_l1 = new anywheresoftware.b4a.objects.LabelWrapper();
+_l2 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 118;BA.debugLine="l1.Initialize(\"\")";
+_l1.Initialize(mostCurrent.activityBA,"");
+ //BA.debugLineNum = 119;BA.debugLine="l2.Initialize(\"\")";
+_l2.Initialize(mostCurrent.activityBA,"");
+ //BA.debugLineNum = 120;BA.debugLine="l2.TextSize=15";
+_l2.setTextSize((float) (15));
+ //BA.debugLineNum = 121;BA.debugLine="l1.TextSize=13";
+_l1.setTextSize((float) (13));
+ //BA.debugLineNum = 122;BA.debugLine="l1.textcolor=mcl.md_black_1000";
+_l1.setTextColor(mostCurrent._mcl.getmd_black_1000());
+ //BA.debugLineNum = 123;BA.debugLine="l2.textcolor=mcl.md_black_1000";
+_l2.setTextColor(mostCurrent._mcl.getmd_black_1000());
+ //BA.debugLineNum = 124;BA.debugLine="l1.Gravity=Gravity.TOP";
+_l1.setGravity(anywheresoftware.b4a.keywords.Common.Gravity.TOP);
+ //BA.debugLineNum = 125;BA.debugLine="l1.Typeface=rfont";
+_l1.setTypeface((android.graphics.Typeface)(_rfont.getObject()));
+ //BA.debugLineNum = 126;BA.debugLine="l2.Typeface=rfont";
+_l2.setTypeface((android.graphics.Typeface)(_rfont.getObject()));
+ //BA.debugLineNum = 127;BA.debugLine="Dim cs As CSBuilder";
+_cs = new anywheresoftware.b4a.objects.CSBuilder();
+ //BA.debugLineNum = 128;BA.debugLine="cs.Initialize.Append(\"App Ver: \"&pack.GetVersionN";
+_cs.Initialize().Append(BA.ObjectToCharSequence("App Ver: "+mostCurrent._pack.GetVersionName(_package)+anywheresoftware.b4a.keywords.Common.CRLF+"Build Nr: "+BA.NumberToString(mostCurrent._pack.GetVersionCode(_package))+anywheresoftware.b4a.keywords.Common.CRLF+anywheresoftware.b4a.keywords.Common.CRLF+"Code: D.Trojan"+anywheresoftware.b4a.keywords.Common.CRLF)).Append(BA.ObjectToCharSequence("Published by Sulomedia"+anywheresoftware.b4a.keywords.Common.CRLF+"© 2017"+anywheresoftware.b4a.keywords.Common.CRLF+anywheresoftware.b4a.keywords.Common.CRLF));
+ //BA.debugLineNum = 129;BA.debugLine="cs.Append(CreateClickableWord(utext)).PopAll";
+_cs.Append(BA.ObjectToCharSequence(_createclickableword(_utext).getObject())).PopAll();
+ //BA.debugLineNum = 130;BA.debugLine="l2.Text=\"About \"&pack.GetApplicationLabel(package";
+_l2.setText(BA.ObjectToCharSequence("About "+mostCurrent._pack.GetApplicationLabel(_package)));
+ //BA.debugLineNum = 131;BA.debugLine="l1.Text=cs";
+_l1.setText(BA.ObjectToCharSequence(_cs.getObject()));
+ //BA.debugLineNum = 132;BA.debugLine="Dim infodia As MaterialDialog";
+_infodia = new de.amberhome.materialdialogs.MaterialDialogWrapper();
+ //BA.debugLineNum = 133;BA.debugLine="Dim inf As BitmapDrawable";
+_inf = new anywheresoftware.b4a.objects.drawable.BitmapDrawable();
+ //BA.debugLineNum = 134;BA.debugLine="inf.Initialize(LoadBitmap(File.DirAssets,\"ic_andr";
+_inf.Initialize((android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"ic_android_black_36dp.png").getObject()));
+ //BA.debugLineNum = 135;BA.debugLine="Dim Builder As MaterialDialogBuilder";
+_builder = new de.amberhome.materialdialogs.MaterialDialogBuilderWrapper();
+ //BA.debugLineNum = 136;BA.debugLine="Builder.Initialize(\"Dialog3\")";
+_builder.Initialize(mostCurrent.activityBA,"Dialog3");
+ //BA.debugLineNum = 137;BA.debugLine="Builder.Title(l2.Text).TitleColor(mcl.md_black_10";
+_builder.Title(BA.ObjectToCharSequence(_l2.getText())).TitleColor(mostCurrent._mcl.getmd_black_1000()).Icon((android.graphics.drawable.Drawable)(_inf.getObject())).LimitIconToDefaultSize().Theme(_builder.THEME_LIGHT).Content(BA.ObjectToCharSequence(_cs.getObject())).ContentLineSpacing((float) (anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (1)))).Typeface((android.graphics.Typeface)(_rfont.getObject()),(android.graphics.Typeface)(_rfont.getObject())).Cancelable(anywheresoftware.b4a.keywords.Common.True).NeutralText(BA.ObjectToCharSequence("close")).NeutralColor(mostCurrent._mcl.getmd_grey_600()).ContentGravity(_builder.GRAVITY_START).ContentLineSpacing((float) (2));
+ //BA.debugLineNum = 138;BA.debugLine="infodia=Builder.Show";
+_infodia = _builder.Show();
+ //BA.debugLineNum = 139;BA.debugLine="infodia.Show";
+_infodia.Show();
+ //BA.debugLineNum = 140;BA.debugLine="cs.EnableClickEvents(l1)";
+_cs.EnableClickEvents((android.widget.TextView)(_l1.getObject()));
+ //BA.debugLineNum = 141;BA.debugLine="End Sub";
 return "";
 }
 public static String  _acb1_checkedchange(boolean _checked) throws Exception{
-RDebugUtils.currentModule="option";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "acb1_checkedchange"))
-	return (String) Debug.delegate(mostCurrent.activityBA, "acb1_checkedchange", new Object[] {_checked});
-RDebugUtils.currentLine=4128768;
- //BA.debugLineNum = 4128768;BA.debugLine="Sub acb1_CheckedChange(Checked As Boolean)";
-RDebugUtils.currentLine=4128769;
- //BA.debugLineNum = 4128769;BA.debugLine="Select Checked";
+ //BA.debugLineNum = 67;BA.debugLine="Sub acb1_CheckedChange(Checked As Boolean)";
+ //BA.debugLineNum = 68;BA.debugLine="Select Checked";
 switch (BA.switchObjectToInt(_checked,anywheresoftware.b4a.keywords.Common.True,anywheresoftware.b4a.keywords.Common.False)) {
 case 0: {
-RDebugUtils.currentLine=4128771;
- //BA.debugLineNum = 4128771;BA.debugLine="StartService(info)";
+ //BA.debugLineNum = 70;BA.debugLine="StartService(info)";
 anywheresoftware.b4a.keywords.Common.StartService(processBA,(Object)(mostCurrent._info.getObject()));
-RDebugUtils.currentLine=4128772;
- //BA.debugLineNum = 4128772;BA.debugLine="acb1.Text=\"Service: Aktiviert\"";
+ //BA.debugLineNum = 71;BA.debugLine="acb1.Text=\"Service: Aktiviert\"";
 mostCurrent._acb1.setText(BA.ObjectToCharSequence("Service: Aktiviert"));
+ //BA.debugLineNum = 72;BA.debugLine="save(True)";
+_save(anywheresoftware.b4a.keywords.Common.True);
  break; }
 case 1: {
-RDebugUtils.currentLine=4128774;
- //BA.debugLineNum = 4128774;BA.debugLine="acb1.Text=\"Service: Deaktiviert\"";
+ //BA.debugLineNum = 74;BA.debugLine="acb1.Text=\"Service: Deaktiviert\"";
 mostCurrent._acb1.setText(BA.ObjectToCharSequence("Service: Deaktiviert"));
-RDebugUtils.currentLine=4128775;
- //BA.debugLineNum = 4128775;BA.debugLine="StopService(info)";
+ //BA.debugLineNum = 75;BA.debugLine="StopService(info)";
 anywheresoftware.b4a.keywords.Common.StopService(processBA,(Object)(mostCurrent._info.getObject()));
+ //BA.debugLineNum = 76;BA.debugLine="save(False)";
+_save(anywheresoftware.b4a.keywords.Common.False);
  break; }
 }
 ;
-RDebugUtils.currentLine=4128777;
- //BA.debugLineNum = 4128777;BA.debugLine="End Sub";
+ //BA.debugLineNum = 78;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
-RDebugUtils.currentModule="option";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create"))
-	return (String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime});
 anywheresoftware.b4a.objects.CSBuilder _cs = null;
-RDebugUtils.currentLine=3801088;
- //BA.debugLineNum = 3801088;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=3801089;
- //BA.debugLineNum = 3801089;BA.debugLine="Activity.LoadLayout(\"2\")";
+ //BA.debugLineNum = 24;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 25;BA.debugLine="Activity.LoadLayout(\"2\")";
 mostCurrent._activity.LoadLayout("2",mostCurrent.activityBA);
-RDebugUtils.currentLine=3801090;
- //BA.debugLineNum = 3801090;BA.debugLine="Mtext.Typeface=rfont";
+ //BA.debugLineNum = 26;BA.debugLine="savedata.Initialize(File.DirInternal,\"save_data\")";
+mostCurrent._savedata._initialize(processBA,anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"save_data");
+ //BA.debugLineNum = 27;BA.debugLine="Mtext.Typeface=rfont";
 mostCurrent._mtext.setTypeface((android.graphics.Typeface)(_rfont.getObject()));
-RDebugUtils.currentLine=3801091;
- //BA.debugLineNum = 3801091;BA.debugLine="Ctext.Typeface=rfont";
+ //BA.debugLineNum = 28;BA.debugLine="Ctext.Typeface=rfont";
 mostCurrent._ctext.setTypeface((android.graphics.Typeface)(_rfont.getObject()));
-RDebugUtils.currentLine=3801092;
- //BA.debugLineNum = 3801092;BA.debugLine="acb1.TextSize=12";
+ //BA.debugLineNum = 29;BA.debugLine="acb1.TextSize=12";
 mostCurrent._acb1.setTextSize((float) (12));
-RDebugUtils.currentLine=3801093;
- //BA.debugLineNum = 3801093;BA.debugLine="acb1.Typeface=rfont";
+ //BA.debugLineNum = 30;BA.debugLine="acb1.Typeface=rfont";
 mostCurrent._acb1.setTypeface((android.graphics.Typeface)(_rfont.getObject()));
-RDebugUtils.currentLine=3801094;
- //BA.debugLineNum = 3801094;BA.debugLine="acb1.Text=\"Service Modul: Deaktiviert\"";
+ //BA.debugLineNum = 31;BA.debugLine="acb1.Text=\"Service Modul: Deaktiviert\"";
 mostCurrent._acb1.setText(BA.ObjectToCharSequence("Service Modul: Deaktiviert"));
-RDebugUtils.currentLine=3801095;
- //BA.debugLineNum = 3801095;BA.debugLine="ab1.Text=\"zurück\"";
+ //BA.debugLineNum = 32;BA.debugLine="ab1.Text=\"zurück\"";
 mostCurrent._ab1.setText(BA.ObjectToCharSequence("zurück"));
-RDebugUtils.currentLine=3801096;
- //BA.debugLineNum = 3801096;BA.debugLine="ab1.Typeface=rfont";
+ //BA.debugLineNum = 33;BA.debugLine="ab1.Typeface=rfont";
 mostCurrent._ab1.setTypeface((android.graphics.Typeface)(_rfont.getObject()));
-RDebugUtils.currentLine=3801097;
- //BA.debugLineNum = 3801097;BA.debugLine="Dim cs As CSBuilder";
+ //BA.debugLineNum = 34;BA.debugLine="Dim cs As CSBuilder";
 _cs = new anywheresoftware.b4a.objects.CSBuilder();
-RDebugUtils.currentLine=3801098;
- //BA.debugLineNum = 3801098;BA.debugLine="cs.Initialize.Alignment(\"ALIGN_CENTER\").Append(\"E";
+ //BA.debugLineNum = 35;BA.debugLine="cs.Initialize.Alignment(\"ALIGN_CENTER\").Append(\"E";
 _cs.Initialize().Alignment(BA.getEnumFromString(android.text.Layout.Alignment.class,"ALIGN_CENTER")).Append(BA.ObjectToCharSequence("Einstellungen")).PopAll();
-RDebugUtils.currentLine=3801099;
- //BA.debugLineNum = 3801099;BA.debugLine="Mtext.Text=cs";
+ //BA.debugLineNum = 36;BA.debugLine="Mtext.Text=cs";
 mostCurrent._mtext.setText(BA.ObjectToCharSequence(_cs.getObject()));
-RDebugUtils.currentLine=3801100;
- //BA.debugLineNum = 3801100;BA.debugLine="If StateManager.RestoreState(Activity, \"option\",";
+ //BA.debugLineNum = 37;BA.debugLine="If StateManager.RestoreState(Activity, \"option\",";
 if (mostCurrent._statemanager._restorestate(mostCurrent.activityBA,mostCurrent._activity,"option",(int) (0))==anywheresoftware.b4a.keywords.Common.False) { 
-RDebugUtils.currentLine=3801101;
- //BA.debugLineNum = 3801101;BA.debugLine="acb1.Checked=False";
+ //BA.debugLineNum = 38;BA.debugLine="acb1.Checked=False";
 mostCurrent._acb1.setChecked(anywheresoftware.b4a.keywords.Common.False);
  };
-RDebugUtils.currentLine=3801103;
- //BA.debugLineNum = 3801103;BA.debugLine="c_text";
+ //BA.debugLineNum = 40;BA.debugLine="c_text";
 _c_text();
-RDebugUtils.currentLine=3801104;
- //BA.debugLineNum = 3801104;BA.debugLine="End Sub";
-return "";
-}
-public static String  _c_text() throws Exception{
-RDebugUtils.currentModule="option";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "c_text"))
-	return (String) Debug.delegate(mostCurrent.activityBA, "c_text", null);
-anywheresoftware.b4a.objects.CSBuilder _cs = null;
-RDebugUtils.currentLine=4063232;
- //BA.debugLineNum = 4063232;BA.debugLine="Sub c_text";
-RDebugUtils.currentLine=4063233;
- //BA.debugLineNum = 4063233;BA.debugLine="Dim cs As CSBuilder";
-_cs = new anywheresoftware.b4a.objects.CSBuilder();
-RDebugUtils.currentLine=4063234;
- //BA.debugLineNum = 4063234;BA.debugLine="cs.Initialize.Color(mcl.md_blue_grey_900).Append(";
-_cs.Initialize().Color(mostCurrent._mcl.getmd_blue_grey_900()).Append(BA.ObjectToCharSequence("Hier wird das 'Cleaner Service Module' Aktiviert oder Deaktiviert, Standart: "));
-RDebugUtils.currentLine=4063235;
- //BA.debugLineNum = 4063235;BA.debugLine="cs.Bold.Color(mcl.md_amber_700).Append(\"Deaktivie";
-_cs.Bold().Color(mostCurrent._mcl.getmd_amber_700()).Append(BA.ObjectToCharSequence("Deaktiviert")).Pop().PopAll();
-RDebugUtils.currentLine=4063236;
- //BA.debugLineNum = 4063236;BA.debugLine="Ctext.Text=cs";
-mostCurrent._ctext.setText(BA.ObjectToCharSequence(_cs.getObject()));
-RDebugUtils.currentLine=4063237;
- //BA.debugLineNum = 4063237;BA.debugLine="End Sub";
+ //BA.debugLineNum = 41;BA.debugLine="l_text";
+_l_text();
+ //BA.debugLineNum = 42;BA.debugLine="End Sub";
 return "";
 }
 public static boolean  _activity_keypress(int _keycode) throws Exception{
-RDebugUtils.currentModule="option";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_keypress"))
-	return (Boolean) Debug.delegate(mostCurrent.activityBA, "activity_keypress", new Object[] {_keycode});
-RDebugUtils.currentLine=3997696;
- //BA.debugLineNum = 3997696;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
-RDebugUtils.currentLine=3997697;
- //BA.debugLineNum = 3997697;BA.debugLine="If KeyCode=KeyCodes.KEYCODE_BACK Then";
+ //BA.debugLineNum = 52;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
+ //BA.debugLineNum = 53;BA.debugLine="If KeyCode=KeyCodes.KEYCODE_BACK Then";
 if (_keycode==anywheresoftware.b4a.keywords.Common.KeyCodes.KEYCODE_BACK) { 
-RDebugUtils.currentLine=3997698;
- //BA.debugLineNum = 3997698;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 54;BA.debugLine="StateManager.SaveState(Activity,\"option\")";
+mostCurrent._statemanager._savestate(mostCurrent.activityBA,mostCurrent._activity,"option");
+ //BA.debugLineNum = 55;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
-RDebugUtils.currentLine=3997699;
- //BA.debugLineNum = 3997699;BA.debugLine="Animator.setanimati(\"extra_in\", \"extra_out\")";
+ //BA.debugLineNum = 56;BA.debugLine="Animator.setanimati(\"extra_in\", \"extra_out\")";
 mostCurrent._animator._setanimati(mostCurrent.activityBA,"extra_in","extra_out");
  };
-RDebugUtils.currentLine=3997701;
- //BA.debugLineNum = 3997701;BA.debugLine="Return(True)";
+ //BA.debugLineNum = 58;BA.debugLine="Return(True)";
 if (true) return (anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=3997702;
- //BA.debugLineNum = 3997702;BA.debugLine="End Sub";
+ //BA.debugLineNum = 59;BA.debugLine="End Sub";
 return false;
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
-RDebugUtils.currentModule="option";
-RDebugUtils.currentLine=3932160;
- //BA.debugLineNum = 3932160;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=3932162;
- //BA.debugLineNum = 3932162;BA.debugLine="End Sub";
+ //BA.debugLineNum = 48;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 50;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
-RDebugUtils.currentModule="option";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume"))
-	return (String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null);
-RDebugUtils.currentLine=3866624;
- //BA.debugLineNum = 3866624;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=3866626;
- //BA.debugLineNum = 3866626;BA.debugLine="End Sub";
+ //BA.debugLineNum = 44;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 46;BA.debugLine="End Sub";
+return "";
+}
+public static String  _c_text() throws Exception{
+anywheresoftware.b4a.objects.CSBuilder _cs = null;
+ //BA.debugLineNum = 61;BA.debugLine="Sub c_text";
+ //BA.debugLineNum = 62;BA.debugLine="Dim cs As CSBuilder";
+_cs = new anywheresoftware.b4a.objects.CSBuilder();
+ //BA.debugLineNum = 63;BA.debugLine="cs.Initialize.Color(mcl.md_black_1000).Append(\"Hi";
+_cs.Initialize().Color(mostCurrent._mcl.getmd_black_1000()).Append(BA.ObjectToCharSequence("Hier wird das 'Cleaner Service Module' Aktiviert oder Deaktiviert")).Pop().PopAll();
+ //BA.debugLineNum = 64;BA.debugLine="Ctext.Text=cs";
+mostCurrent._ctext.setText(BA.ObjectToCharSequence(_cs.getObject()));
+ //BA.debugLineNum = 65;BA.debugLine="End Sub";
+return "";
+}
+public static anywheresoftware.b4a.objects.CSBuilder  _createclickableword(String _text) throws Exception{
+anywheresoftware.b4a.objects.CSBuilder _cs = null;
+ //BA.debugLineNum = 152;BA.debugLine="Sub CreateClickableWord(Text As String) As CSBuild";
+ //BA.debugLineNum = 153;BA.debugLine="Dim cs As CSBuilder";
+_cs = new anywheresoftware.b4a.objects.CSBuilder();
+ //BA.debugLineNum = 154;BA.debugLine="Return cs.Initialize.Underline.Color(0xFF00D0FF).";
+if (true) return _cs.Initialize().Underline().Color((int) (0xff00d0ff)).Clickable(processBA,"Word",(Object)(_text)).Append(BA.ObjectToCharSequence(_text)).PopAll();
+ //BA.debugLineNum = 155;BA.debugLine="End Sub";
+return null;
+}
+public static String  _globals() throws Exception{
+ //BA.debugLineNum = 12;BA.debugLine="Sub Globals";
+ //BA.debugLineNum = 13;BA.debugLine="Private acb1 As ACCheckBox";
+mostCurrent._acb1 = new de.amberhome.objects.appcompat.ACCheckBoxWrapper();
+ //BA.debugLineNum = 14;BA.debugLine="Private Ctext As Label";
+mostCurrent._ctext = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 15;BA.debugLine="Private Mtext As Label";
+mostCurrent._mtext = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 16;BA.debugLine="Private Panel1 As Panel";
+mostCurrent._panel1 = new anywheresoftware.b4a.objects.PanelWrapper();
+ //BA.debugLineNum = 17;BA.debugLine="Private lv2 As ListView";
+mostCurrent._lv2 = new anywheresoftware.b4a.objects.ListViewWrapper();
+ //BA.debugLineNum = 18;BA.debugLine="Private mcl As MaterialColors";
+mostCurrent._mcl = new com.tchart.materialcolors.MaterialColors();
+ //BA.debugLineNum = 19;BA.debugLine="Private savedata As KeyValueStore";
+mostCurrent._savedata = new de.sclean.keyvaluestore();
+ //BA.debugLineNum = 20;BA.debugLine="Private pack As PackageManager";
+mostCurrent._pack = new anywheresoftware.b4a.phone.PackageManagerWrapper();
+ //BA.debugLineNum = 21;BA.debugLine="Private ab1 As ACFlatButton";
+mostCurrent._ab1 = new de.amberhome.objects.appcompat.ACFlatButtonWrapper();
+ //BA.debugLineNum = 22;BA.debugLine="End Sub";
+return "";
+}
+public static String  _l_text() throws Exception{
+anywheresoftware.b4a.objects.LabelWrapper _la1 = null;
+anywheresoftware.b4a.objects.LabelWrapper _la2 = null;
+ //BA.debugLineNum = 89;BA.debugLine="Sub l_text";
+ //BA.debugLineNum = 90;BA.debugLine="Dim la1,la2 As Label";
+_la1 = new anywheresoftware.b4a.objects.LabelWrapper();
+_la2 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 91;BA.debugLine="la2.Initialize(\"la2\")";
+_la2.Initialize(mostCurrent.activityBA,"la2");
+ //BA.debugLineNum = 92;BA.debugLine="la1.Initialize(\"la1\")";
+_la1.Initialize(mostCurrent.activityBA,"la1");
+ //BA.debugLineNum = 93;BA.debugLine="la1=lv2.TwoLinesAndBitmap.Label";
+_la1 = mostCurrent._lv2.getTwoLinesAndBitmap().Label;
+ //BA.debugLineNum = 94;BA.debugLine="la2=lv2.TwoLinesAndBitmap.SecondLabel";
+_la2 = mostCurrent._lv2.getTwoLinesAndBitmap().SecondLabel;
+ //BA.debugLineNum = 95;BA.debugLine="lv2.TwoLinesAndBitmap.ImageView.Height=32dip";
+mostCurrent._lv2.getTwoLinesAndBitmap().ImageView.setHeight(anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (32)));
+ //BA.debugLineNum = 96;BA.debugLine="lv2.TwoLinesAndBitmap.ImageView.Width=32dip";
+mostCurrent._lv2.getTwoLinesAndBitmap().ImageView.setWidth(anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (32)));
+ //BA.debugLineNum = 97;BA.debugLine="lv2.TwoLinesAndBitmap.ItemHeight=50dip";
+mostCurrent._lv2.getTwoLinesAndBitmap().setItemHeight(anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (50)));
+ //BA.debugLineNum = 98;BA.debugLine="la1.TextSize=15";
+_la1.setTextSize((float) (15));
+ //BA.debugLineNum = 99;BA.debugLine="la2.TextSize=11";
+_la2.setTextSize((float) (11));
+ //BA.debugLineNum = 100;BA.debugLine="la1.Typeface=rfont";
+_la1.setTypeface((android.graphics.Typeface)(_rfont.getObject()));
+ //BA.debugLineNum = 101;BA.debugLine="la2.Typeface=rfont";
+_la2.setTypeface((android.graphics.Typeface)(_rfont.getObject()));
+ //BA.debugLineNum = 102;BA.debugLine="la1.TextColor=Colors.ARGB(255,36,220,238)";
+_la1.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.ARGB((int) (255),(int) (36),(int) (220),(int) (238)));
+ //BA.debugLineNum = 103;BA.debugLine="la2.TextColor=Colors.ARGB(230,0,0,0)";
+_la2.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.ARGB((int) (230),(int) (0),(int) (0),(int) (0)));
+ //BA.debugLineNum = 104;BA.debugLine="lv2.Clear";
+mostCurrent._lv2.Clear();
+ //BA.debugLineNum = 105;BA.debugLine="lv2.AddTwoLinesAndBitmap2(\"About\",\"alles über Scl";
+mostCurrent._lv2.AddTwoLinesAndBitmap2(BA.ObjectToCharSequence("About"),BA.ObjectToCharSequence("alles über Scleaner"),(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"ic_extension_white_36dp.png").getObject()),(Object)(2));
+ //BA.debugLineNum = 106;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lv2_itemclick(int _position,Object _value) throws Exception{
-RDebugUtils.currentModule="option";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "lv2_itemclick"))
-	return (String) Debug.delegate(mostCurrent.activityBA, "lv2_itemclick", new Object[] {_position,_value});
-RDebugUtils.currentLine=4194304;
- //BA.debugLineNum = 4194304;BA.debugLine="Sub lv2_ItemClick (Position As Int, Value As Objec";
-RDebugUtils.currentLine=4194306;
- //BA.debugLineNum = 4194306;BA.debugLine="End Sub";
+ //BA.debugLineNum = 108;BA.debugLine="Sub lv2_ItemClick (Position As Int, Value As Objec";
+ //BA.debugLineNum = 109;BA.debugLine="Select Value";
+switch (BA.switchObjectToInt(_value,(Object)(2))) {
+case 0: {
+ //BA.debugLineNum = 111;BA.debugLine="about_click";
+_about_click();
+ break; }
+}
+;
+ //BA.debugLineNum = 113;BA.debugLine="End Sub";
+return "";
+}
+public static String  _openurl() throws Exception{
+String _url = "";
+anywheresoftware.b4a.objects.IntentWrapper _i = null;
+ //BA.debugLineNum = 161;BA.debugLine="Sub openurl";
+ //BA.debugLineNum = 162;BA.debugLine="Dim url As String=\"https://www.sulomedia.de\"";
+_url = "https://www.sulomedia.de";
+ //BA.debugLineNum = 163;BA.debugLine="Dim i As Intent";
+_i = new anywheresoftware.b4a.objects.IntentWrapper();
+ //BA.debugLineNum = 164;BA.debugLine="i.Initialize(i.ACTION_VIEW, url)";
+_i.Initialize(_i.ACTION_VIEW,_url);
+ //BA.debugLineNum = 165;BA.debugLine="i.SetType(\"text/html\")";
+_i.SetType("text/html");
+ //BA.debugLineNum = 166;BA.debugLine="i.AddCategory(\"android.intent.category.BROWSABLE\"";
+_i.AddCategory("android.intent.category.BROWSABLE");
+ //BA.debugLineNum = 167;BA.debugLine="StartActivity(i)";
+anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(_i.getObject()));
+ //BA.debugLineNum = 168;BA.debugLine="End Sub";
+return "";
+}
+public static String  _process_globals() throws Exception{
+ //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
+ //BA.debugLineNum = 7;BA.debugLine="Private rfont As Typeface= rfont.LoadFromAssets(\"";
+_rfont = new anywheresoftware.b4a.keywords.constants.TypefaceWrapper();
+_rfont.setObject((android.graphics.Typeface)(_rfont.LoadFromAssets("Aldrich-Regular.ttf")));
+ //BA.debugLineNum = 8;BA.debugLine="Private package As String=\"de.sclean\"";
+_package = "de.sclean";
+ //BA.debugLineNum = 9;BA.debugLine="Dim utext As String=\"www.sulomedia.de\"";
+_utext = "www.sulomedia.de";
+ //BA.debugLineNum = 10;BA.debugLine="End Sub";
+return "";
+}
+public static String  _save(boolean _sav) throws Exception{
+ //BA.debugLineNum = 80;BA.debugLine="Sub save(sav As Boolean)";
+ //BA.debugLineNum = 81;BA.debugLine="If sav=True Then";
+if (_sav==anywheresoftware.b4a.keywords.Common.True) { 
+ //BA.debugLineNum = 82;BA.debugLine="savedata.Put(\"sv\",sav)";
+mostCurrent._savedata._put("sv",(Object)(_sav));
+ }else {
+ //BA.debugLineNum = 84;BA.debugLine="savedata.Remove(\"sv\")";
+mostCurrent._savedata._remove("sv");
+ };
+ //BA.debugLineNum = 87;BA.debugLine="End Sub";
+return "";
+}
+public static String  _word_click(Object _tag) throws Exception{
+ //BA.debugLineNum = 156;BA.debugLine="Sub Word_click(tag As Object)";
+ //BA.debugLineNum = 157;BA.debugLine="Log(tag)";
+anywheresoftware.b4a.keywords.Common.Log(BA.ObjectToString(_tag));
+ //BA.debugLineNum = 158;BA.debugLine="openurl";
+_openurl();
+ //BA.debugLineNum = 160;BA.debugLine="End Sub";
 return "";
 }
 }

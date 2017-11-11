@@ -14,6 +14,7 @@ Sub Process_Globals
 	Private notify As Notification
 	Private kvsdata As KeyValueStore
 	Private alist As KeyValueStore
+	
 End Sub
 
 Sub Service_Create
@@ -22,14 +23,15 @@ Sub Service_Create
 	notify.Initialize
 	notify.Icon="icon"
 	notify.Number=1
-	notify.AutoCancel=True
+	notify.AutoCancel=False
+	notify.OnGoingEvent=True
 	notify.Light=False
 	notify.Sound=False
 	notify.Vibrate=False
 End Sub
 
 Sub Service_Start (StartingIntent As Intent)
-	notify.SetInfo("Cleaner Service:","der Cleaner Service wurde erfolgreich gestartet",Main)
+	notify.SetInfo("SC Service Info","S-Cleaner Service gestartet",Main)
 	notify.Notify(1)
 End Sub
 
@@ -56,7 +58,12 @@ Sub c_clean
 End Sub
 
 Sub c_ready
-	
-	notify.SetInfo("Fertig!",alist.ListKeys.Size&" Apps mit bereinigt!",Main)
+	Dim data As String=kvsdata.Get("cz")
+	notify.SetInfo(data&" gelöscht!",alist.ListKeys.Size&" Apps bereinigt..",Main)
+	notify.Notify(1)
+End Sub
+
+Sub c_off
+	notify.SetInfo(alist.ListKeys.Size&" Apps geprüft","keine App daten gefunden..",Main)
 	notify.Notify(1)
 End Sub

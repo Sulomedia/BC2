@@ -133,8 +133,8 @@ Sub cb_onScanCompleted(AppsList As Object)
 		CallSub(Main,"dp_off")
 		Else 
 			CallSub(Widget,"rv_restart")
-			CallSub(Widget,"rv_restart")
 		CallSub(Main,"total_off")
+		CallSub(info,"c_off")
 	End If
 	
 End Sub
@@ -152,6 +152,7 @@ End Sub
 
 Sub cb_onCleanCompleted(CacheSize As Long)
 	kvst.DeleteAll
+	kvsdata.Put("cz",FormatFileSize(CacheSize))
 	info_remote
 	CallSub(Main,"dp_clear")
 	CallSub(info,"c_ready")

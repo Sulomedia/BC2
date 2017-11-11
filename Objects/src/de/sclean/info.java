@@ -28,7 +28,7 @@ public class info extends  android.app.Service{
         super.onCreate();
         mostCurrent = this;
         if (processBA == null) {
-		    processBA = new anywheresoftware.b4a.ShellBA(this, null, null, "de.sclean", "de.sclean.info");
+		    processBA = new BA(this, null, null, "de.sclean", "de.sclean.info");
             if (BA.isShellModeRuntimeCheck(processBA)) {
                 processBA.raiseEvent2(null, true, "SHELL", false);
 		    }
@@ -124,8 +124,7 @@ public class info extends  android.app.Service{
 @Override
 	public android.os.IBinder onBind(android.content.Intent intent) {
 		return null;
-	}
-public anywheresoftware.b4a.keywords.Common __c = null;
+	}public anywheresoftware.b4a.keywords.Common __c = null;
 public static anywheresoftware.b4a.objects.NotificationWrapper _notify = null;
 public static de.sclean.keyvaluestore _kvsdata = null;
 public static de.sclean.keyvaluestore _alist = null;
@@ -136,141 +135,109 @@ public de.sclean.starter _starter = null;
 public de.sclean.widget _widget = null;
 public de.sclean.statemanager _statemanager = null;
 public de.sclean.animator _animator = null;
-public static String  _c_ready() throws Exception{
-RDebugUtils.currentModule="info";
-if (Debug.shouldDelegate(processBA, "c_ready"))
-	return (String) Debug.delegate(processBA, "c_ready", null);
-RDebugUtils.currentLine=5832704;
- //BA.debugLineNum = 5832704;BA.debugLine="Sub c_ready";
-RDebugUtils.currentLine=5832706;
- //BA.debugLineNum = 5832706;BA.debugLine="notify.SetInfo(\"Fertig!\",alist.ListKeys.Size&\" Ap";
-_notify.SetInfo(processBA,"Fertig!",BA.NumberToString(_alist._listkeys(null).getSize())+" Apps mit bereinigt!",(Object)(mostCurrent._main.getObject()));
-RDebugUtils.currentLine=5832707;
- //BA.debugLineNum = 5832707;BA.debugLine="notify.Notify(1)";
+public static String  _c_clean() throws Exception{
+ //BA.debugLineNum = 50;BA.debugLine="Sub c_clean";
+ //BA.debugLineNum = 51;BA.debugLine="notify.SetInfo(\"löche cache daten:\",\"einen Moment";
+_notify.SetInfo(processBA,"löche cache daten:","einen Moment bitte..",(Object)(mostCurrent._main.getObject()));
+ //BA.debugLineNum = 52;BA.debugLine="notify.Notify(1)";
 _notify.Notify((int) (1));
-RDebugUtils.currentLine=5832708;
- //BA.debugLineNum = 5832708;BA.debugLine="End Sub";
+ //BA.debugLineNum = 53;BA.debugLine="End Sub";
 return "";
 }
-public static String  _c_update() throws Exception{
-RDebugUtils.currentModule="info";
-if (Debug.shouldDelegate(processBA, "c_update"))
-	return (String) Debug.delegate(processBA, "c_update", null);
-int _cc = 0;
-RDebugUtils.currentLine=5701632;
- //BA.debugLineNum = 5701632;BA.debugLine="Sub c_update";
-RDebugUtils.currentLine=5701633;
- //BA.debugLineNum = 5701633;BA.debugLine="Dim cc As Int";
-_cc = 0;
-RDebugUtils.currentLine=5701634;
- //BA.debugLineNum = 5701634;BA.debugLine="cc=kvsdata.Get(\"c\")";
-_cc = (int)(BA.ObjectToNumber(_kvsdata._get(null,"c")));
-RDebugUtils.currentLine=5701635;
- //BA.debugLineNum = 5701635;BA.debugLine="notify.SetInfo(cc&\" durchsucht\",\"suche nach App c";
-_notify.SetInfo(processBA,BA.NumberToString(_cc)+" durchsucht","suche nach App cache..",(Object)(mostCurrent._main.getObject()));
-RDebugUtils.currentLine=5701636;
- //BA.debugLineNum = 5701636;BA.debugLine="notify.Notify(1)";
+public static String  _c_off() throws Exception{
+ //BA.debugLineNum = 61;BA.debugLine="Sub c_off";
+ //BA.debugLineNum = 62;BA.debugLine="notify.SetInfo(alist.ListKeys.Size&\" Apps geprüft";
+_notify.SetInfo(processBA,BA.NumberToString(_alist._listkeys().getSize())+" Apps geprüft","keine App daten gefunden..",(Object)(mostCurrent._main.getObject()));
+ //BA.debugLineNum = 63;BA.debugLine="notify.Notify(1)";
 _notify.Notify((int) (1));
-RDebugUtils.currentLine=5701637;
- //BA.debugLineNum = 5701637;BA.debugLine="End Sub";
+ //BA.debugLineNum = 64;BA.debugLine="End Sub";
+return "";
+}
+public static String  _c_ready() throws Exception{
+String _data = "";
+ //BA.debugLineNum = 55;BA.debugLine="Sub c_ready";
+ //BA.debugLineNum = 56;BA.debugLine="Dim data As String=kvsdata.Get(\"cz\")";
+_data = BA.ObjectToString(_kvsdata._get("cz"));
+ //BA.debugLineNum = 57;BA.debugLine="notify.SetInfo(data&\" gelöscht!\",alist.ListKeys.S";
+_notify.SetInfo(processBA,_data+" gelöscht!",BA.NumberToString(_alist._listkeys().getSize())+" Apps bereinigt..",(Object)(mostCurrent._main.getObject()));
+ //BA.debugLineNum = 58;BA.debugLine="notify.Notify(1)";
+_notify.Notify((int) (1));
+ //BA.debugLineNum = 59;BA.debugLine="End Sub";
 return "";
 }
 public static String  _c_start() throws Exception{
-RDebugUtils.currentModule="info";
-if (Debug.shouldDelegate(processBA, "c_start"))
-	return (String) Debug.delegate(processBA, "c_start", null);
-RDebugUtils.currentLine=5636096;
- //BA.debugLineNum = 5636096;BA.debugLine="Sub c_start";
-RDebugUtils.currentLine=5636097;
- //BA.debugLineNum = 5636097;BA.debugLine="notify.SetInfo(\"Suche gestartet:\",\"durchsuche App";
+ //BA.debugLineNum = 38;BA.debugLine="Sub c_start";
+ //BA.debugLineNum = 39;BA.debugLine="notify.SetInfo(\"Suche gestartet:\",\"durchsuche App";
 _notify.SetInfo(processBA,"Suche gestartet:","durchsuche Apps..",(Object)(mostCurrent._main.getObject()));
-RDebugUtils.currentLine=5636098;
- //BA.debugLineNum = 5636098;BA.debugLine="notify.Notify(1)";
+ //BA.debugLineNum = 40;BA.debugLine="notify.Notify(1)";
 _notify.Notify((int) (1));
-RDebugUtils.currentLine=5636099;
- //BA.debugLineNum = 5636099;BA.debugLine="End Sub";
+ //BA.debugLineNum = 41;BA.debugLine="End Sub";
 return "";
 }
-public static String  _c_clean() throws Exception{
-RDebugUtils.currentModule="info";
-if (Debug.shouldDelegate(processBA, "c_clean"))
-	return (String) Debug.delegate(processBA, "c_clean", null);
-RDebugUtils.currentLine=5767168;
- //BA.debugLineNum = 5767168;BA.debugLine="Sub c_clean";
-RDebugUtils.currentLine=5767169;
- //BA.debugLineNum = 5767169;BA.debugLine="notify.SetInfo(\"löche cache daten:\",\"einen Moment";
-_notify.SetInfo(processBA,"löche cache daten:","einen Moment bitte..",(Object)(mostCurrent._main.getObject()));
-RDebugUtils.currentLine=5767170;
- //BA.debugLineNum = 5767170;BA.debugLine="notify.Notify(1)";
+public static String  _c_update() throws Exception{
+int _cc = 0;
+ //BA.debugLineNum = 43;BA.debugLine="Sub c_update";
+ //BA.debugLineNum = 44;BA.debugLine="Dim cc As Int";
+_cc = 0;
+ //BA.debugLineNum = 45;BA.debugLine="cc=kvsdata.Get(\"c\")";
+_cc = (int)(BA.ObjectToNumber(_kvsdata._get("c")));
+ //BA.debugLineNum = 46;BA.debugLine="notify.SetInfo(cc&\" durchsucht\",\"suche nach App c";
+_notify.SetInfo(processBA,BA.NumberToString(_cc)+" durchsucht","suche nach App cache..",(Object)(mostCurrent._main.getObject()));
+ //BA.debugLineNum = 47;BA.debugLine="notify.Notify(1)";
 _notify.Notify((int) (1));
-RDebugUtils.currentLine=5767171;
- //BA.debugLineNum = 5767171;BA.debugLine="End Sub";
+ //BA.debugLineNum = 48;BA.debugLine="End Sub";
+return "";
+}
+public static String  _process_globals() throws Exception{
+ //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
+ //BA.debugLineNum = 9;BA.debugLine="Private notify As Notification";
+_notify = new anywheresoftware.b4a.objects.NotificationWrapper();
+ //BA.debugLineNum = 10;BA.debugLine="Private kvsdata As KeyValueStore";
+_kvsdata = new de.sclean.keyvaluestore();
+ //BA.debugLineNum = 11;BA.debugLine="Private alist As KeyValueStore";
+_alist = new de.sclean.keyvaluestore();
+ //BA.debugLineNum = 13;BA.debugLine="End Sub";
 return "";
 }
 public static String  _service_create() throws Exception{
-RDebugUtils.currentModule="info";
-if (Debug.shouldDelegate(processBA, "service_create"))
-	return (String) Debug.delegate(processBA, "service_create", null);
-RDebugUtils.currentLine=5439488;
- //BA.debugLineNum = 5439488;BA.debugLine="Sub Service_Create";
-RDebugUtils.currentLine=5439489;
- //BA.debugLineNum = 5439489;BA.debugLine="kvsdata.Initialize(File.DirInternal,\"data_data\")";
-_kvsdata._initialize(null,processBA,anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"data_data");
-RDebugUtils.currentLine=5439490;
- //BA.debugLineNum = 5439490;BA.debugLine="alist.Initialize(File.DirInternal,\"adata_data\")";
-_alist._initialize(null,processBA,anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"adata_data");
-RDebugUtils.currentLine=5439491;
- //BA.debugLineNum = 5439491;BA.debugLine="notify.Initialize";
+ //BA.debugLineNum = 15;BA.debugLine="Sub Service_Create";
+ //BA.debugLineNum = 16;BA.debugLine="kvsdata.Initialize(File.DirInternal,\"data_data\")";
+_kvsdata._initialize(processBA,anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"data_data");
+ //BA.debugLineNum = 17;BA.debugLine="alist.Initialize(File.DirInternal,\"adata_data\")";
+_alist._initialize(processBA,anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"adata_data");
+ //BA.debugLineNum = 18;BA.debugLine="notify.Initialize";
 _notify.Initialize();
-RDebugUtils.currentLine=5439492;
- //BA.debugLineNum = 5439492;BA.debugLine="notify.Icon=\"icon\"";
+ //BA.debugLineNum = 19;BA.debugLine="notify.Icon=\"icon\"";
 _notify.setIcon("icon");
-RDebugUtils.currentLine=5439493;
- //BA.debugLineNum = 5439493;BA.debugLine="notify.Number=1";
+ //BA.debugLineNum = 20;BA.debugLine="notify.Number=1";
 _notify.setNumber((int) (1));
-RDebugUtils.currentLine=5439494;
- //BA.debugLineNum = 5439494;BA.debugLine="notify.AutoCancel=True";
-_notify.setAutoCancel(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=5439495;
- //BA.debugLineNum = 5439495;BA.debugLine="notify.Light=False";
+ //BA.debugLineNum = 21;BA.debugLine="notify.AutoCancel=False";
+_notify.setAutoCancel(anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 22;BA.debugLine="notify.OnGoingEvent=True";
+_notify.setOnGoingEvent(anywheresoftware.b4a.keywords.Common.True);
+ //BA.debugLineNum = 23;BA.debugLine="notify.Light=False";
 _notify.setLight(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=5439496;
- //BA.debugLineNum = 5439496;BA.debugLine="notify.Sound=False";
+ //BA.debugLineNum = 24;BA.debugLine="notify.Sound=False";
 _notify.setSound(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=5439497;
- //BA.debugLineNum = 5439497;BA.debugLine="notify.Vibrate=False";
+ //BA.debugLineNum = 25;BA.debugLine="notify.Vibrate=False";
 _notify.setVibrate(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=5439498;
- //BA.debugLineNum = 5439498;BA.debugLine="End Sub";
+ //BA.debugLineNum = 26;BA.debugLine="End Sub";
 return "";
 }
 public static String  _service_destroy() throws Exception{
-RDebugUtils.currentModule="info";
-if (Debug.shouldDelegate(processBA, "service_destroy"))
-	return (String) Debug.delegate(processBA, "service_destroy", null);
-RDebugUtils.currentLine=5570560;
- //BA.debugLineNum = 5570560;BA.debugLine="Sub Service_Destroy";
-RDebugUtils.currentLine=5570561;
- //BA.debugLineNum = 5570561;BA.debugLine="notify.Cancel(1)";
+ //BA.debugLineNum = 33;BA.debugLine="Sub Service_Destroy";
+ //BA.debugLineNum = 34;BA.debugLine="notify.Cancel(1)";
 _notify.Cancel((int) (1));
-RDebugUtils.currentLine=5570562;
- //BA.debugLineNum = 5570562;BA.debugLine="End Sub";
+ //BA.debugLineNum = 35;BA.debugLine="End Sub";
 return "";
 }
 public static String  _service_start(anywheresoftware.b4a.objects.IntentWrapper _startingintent) throws Exception{
-RDebugUtils.currentModule="info";
-if (Debug.shouldDelegate(processBA, "service_start"))
-	return (String) Debug.delegate(processBA, "service_start", new Object[] {_startingintent});
-RDebugUtils.currentLine=5505024;
- //BA.debugLineNum = 5505024;BA.debugLine="Sub Service_Start (StartingIntent As Intent)";
-RDebugUtils.currentLine=5505025;
- //BA.debugLineNum = 5505025;BA.debugLine="notify.SetInfo(\"Cleaner Service:\",\"der Cleaner Se";
-_notify.SetInfo(processBA,"Cleaner Service:","der Cleaner Service wurde erfolgreich gestartet",(Object)(mostCurrent._main.getObject()));
-RDebugUtils.currentLine=5505026;
- //BA.debugLineNum = 5505026;BA.debugLine="notify.Notify(1)";
+ //BA.debugLineNum = 28;BA.debugLine="Sub Service_Start (StartingIntent As Intent)";
+ //BA.debugLineNum = 29;BA.debugLine="notify.SetInfo(\"SC Service Info\",\"S-Cleaner Servi";
+_notify.SetInfo(processBA,"SC Service Info","S-Cleaner Service gestartet",(Object)(mostCurrent._main.getObject()));
+ //BA.debugLineNum = 30;BA.debugLine="notify.Notify(1)";
 _notify.Notify((int) (1));
-RDebugUtils.currentLine=5505027;
- //BA.debugLineNum = 5505027;BA.debugLine="End Sub";
+ //BA.debugLineNum = 31;BA.debugLine="End Sub";
 return "";
 }
 }
